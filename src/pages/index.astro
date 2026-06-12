@@ -1,0 +1,62 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/home/Hero.astro';
+import PostCard from '@/components/blog/PostCard.astro';
+import { getPostsByCategory } from '@/lib/posts';
+import { site } from '@/config/site';
+
+const essays = await getPostsByCategory('essay');
+const works = await getPostsByCategory('work');
+const latestEssays = essays.slice(0, 3);
+const latestWorks = works.slice(0, 4);
+---
+
+<BaseLayout title={site.name} description={site.description}>
+  <Hero />
+
+  {
+    latestWorks.length > 0 && (
+      <section class="section-shell border-t border-border/80 py-12">
+        <div class="mb-6 flex items-end justify-between gap-4">
+          <div>
+            <h2 class="text-xl font-semibold tracking-tight">造物</h2>
+            <p class="mt-1 font-mono text-xs text-muted-foreground">路上所作，站点与工具</p>
+          </div>
+          <a href="/works" class="font-mono text-xs text-primary transition-opacity hover:opacity-80">
+            全部造物 →
+          </a>
+        </div>
+        <div class="post-grid">
+          {latestWorks.map((post) => (
+            <PostCard post={post} />
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <section class="section-shell border-t border-border/80 py-12">
+    <div class="mb-6 flex items-end justify-between gap-4">
+      <div>
+        <h2 class="text-xl font-semibold tracking-tight">随笔</h2>
+        <p class="mt-1 font-mono text-xs text-muted-foreground">念头与杂记</p>
+      </div>
+      <a href="/blog" class="font-mono text-xs text-primary transition-opacity hover:opacity-80">
+        全部随笔 →
+      </a>
+    </div>
+    {
+      latestEssays.length > 0 ? (
+        <div class="post-grid">
+          {latestEssays.map((post) => (
+            <PostCard post={post} />
+          ))}
+        </div>
+      ) : (
+        <div class="rounded-xl border border-dashed border-border bg-card/40 px-6 py-10 text-center">
+          <p class="text-sm text-muted-foreground">随笔尚在酝酿，敬请期待。</p>
+        </div>
+      )
+    }
+  </section>
+</BaseLayout>

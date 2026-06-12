@@ -1,0 +1,59 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatShortDate, getCategoryLabel, getPostSlug } from '@/lib/posts';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const slug = getPostSlug(post);
+const cover = post.data.cover;
+---
+
+<article class="group h-full">
+  <a
+    href={`/blog/${slug}/`}
+    class="flex h-full flex-col overflow-hidden rounded-lg border border-border/80 bg-card/70 shadow-ink transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:bg-card hover:shadow-[0_4px_20px_-8px_hsl(var(--ink)/0.15)]"
+  >
+    {
+      cover ? (
+        <div class="relative aspect-[5/3] overflow-hidden border-b border-border/60 bg-muted">
+          <img
+            src={cover}
+            alt=""
+            width={400}
+            height={240}
+            loading="lazy"
+            decoding="async"
+            class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+          />
+          <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+        </div>
+      ) : (
+        <div class="flex aspect-[5/3] items-center justify-center border-b border-border/60 bg-secondary/40">
+          <span class="font-brush text-2xl text-primary/40">{getCategoryLabel(post.data.category)}</span>
+        </div>
+      )
+    }
+
+    <div class="flex flex-1 flex-col p-3.5">
+      <div class="flex items-center justify-between gap-2 font-mono text-[10px] text-muted-foreground">
+        <span class="rounded border border-primary/20 bg-accent/50 px-1.5 py-0.5 text-primary">
+          {getCategoryLabel(post.data.category)}
+        </span>
+        <time datetime={post.data.pubDate.toISOString()} class="shrink-0 tabular-nums">
+          {formatShortDate(post.data.pubDate)}
+        </time>
+      </div>
+
+      <h2 class="mt-2.5 line-clamp-2 text-[13px] font-semibold leading-snug tracking-tight text-ink transition-colors group-hover:text-primary sm:text-sm">
+        {post.data.title}
+      </h2>
+
+      <p class="mt-1.5 line-clamp-2 flex-1 text-xs leading-relaxed text-muted-foreground">
+        {post.data.description}
+      </p>
+    </div>
+  </a>
+</article>

@@ -1,0 +1,84 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import ThemeToggle from '@/components/shared/ThemeToggle';
+import logo from '@/assets/logo.jpg';
+import { site } from '@/config/site';
+import { getPostSlug, type PostCategory } from '@/lib/posts';
+
+const nav = [
+  { href: '/', label: '首页' },
+  { href: '/blog', label: '随笔' },
+  { href: '/works', label: '造物' },
+  { href: '/about', label: '关于' },
+];
+
+const currentPath = Astro.url.pathname;
+
+let articleCategory: PostCategory | null = null;
+const blogPostMatch = currentPath.match(/^\/blog\/([^/]+)\/?$/);
+if (blogPostMatch?.[1]) {
+  const posts = await getCollection('blog');
+  const post = posts.find((item) => getPostSlug(item) === blogPostMatch[1]);
+  if (post) articleCategory = post.data.category;
+}
+
+function isNavActive(href: string): boolean {
+  if (href === '/') return currentPath === '/';
+  if (href === '/blog') {
+    if (articleCategory) return articleCategory === 'essay';
+    return currentPath === '/blog';
+  }
+  if (href === '/works') {
+    if (articleCategory) return articleCategory === 'work';
+    return currentPath === '/works';
+  }
+  return currentPath.startsWith(href);
+}
+---
+
+<header class="sticky top-0 z-50 border-b border-border/80 bg-background/90 backdrop-blur-md">
+  <div class="section-shell flex h-16 items-center justify-between">
+    <a href="/" class="group flex items-center gap-3">
+      <div class="relative overflow-hidden rounded-md border border-border bg-card p-0.5 shadow-ink">
+        <Image
+          src={logo}
+          alt={site.name}
+          width={36}
+          height={36}
+          class="h-9 w-9 object-cover object-center transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
+      <div class="hidden sm:block">
+        <span class="font-brush block text-[1.35rem] leading-none tracking-wide text-ink">{site.name}</span>
+        <span class="font-poem block max-w-[12rem] truncate text-[13px] leading-snug text-muted-foreground">
+          {site.slogan}
+        </span>
+      </div>
+    </a>
+
+    <nav class="flex items-center gap-0.5">
+      {
+        nav.map((item) => {
+          const active = isNavActive(item.href);
+          return (
+            <a
+              href={item.href}
+              class:list={[
+                'rounded-md px-3 py-2 font-mono text-xs transition-colors',
+                active
+                  ? 'bg-accent text-accent-foreground'
+                  : 'text-muted-foreground hover:bg-secondary hover:text-foreground',
+              ]}
+            >
+              {item.label}
+            </a>
+          );
+        })
+      }
+      <div class="ml-1 border-l border-border pl-1">
+        <ThemeToggle client:idle />
+      </div>
+    </nav>
+  </div>
+</header>

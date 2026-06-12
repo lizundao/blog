@@ -1,0 +1,109 @@
+---
+import { Image } from 'astro:assets';
+import avatar from '@/assets/avat.png';
+import { site } from '@/config/site';
+
+interface Props {
+  variant?: 'compact' | 'default' | 'profile';
+}
+
+const { variant = 'default' } = Astro.props;
+
+const isCompact = variant === 'compact';
+const isProfile = variant === 'profile';
+---
+
+<div
+  class:list={[
+    'rounded-xl border border-border bg-card shadow-ink',
+    isCompact && 'p-4',
+    !isCompact && !isProfile && 'p-5',
+    isProfile && 'rounded-2xl p-8 text-center',
+  ]}
+>
+  <div
+    class:list={[
+      'flex gap-4',
+      isCompact && 'items-center',
+      !isCompact && !isProfile && 'flex-col items-center text-center',
+      isProfile && 'flex-col items-center',
+    ]}
+  >
+    <Image
+      src={avatar}
+      alt={site.author.name}
+      width={isProfile ? 280 : isCompact ? 56 : 96}
+      height={isProfile ? 280 : isCompact ? 56 : 96}
+      class:list={[
+        'shrink-0 rounded-full border-2 border-primary/50 object-cover',
+        isCompact && 'h-14 w-14',
+        !isCompact && !isProfile && 'h-24 w-24',
+        isProfile && 'mx-auto h-44 w-44',
+      ]}
+    />
+
+    <div
+      class:list={[
+        isCompact && 'min-w-0 text-left',
+        !isCompact && !isProfile && 'w-full space-y-2',
+        isProfile && 'mt-6 w-full space-y-2',
+      ]}
+    >
+      <div>
+        <p
+          class:list={[
+            'font-semibold tracking-tight text-ink',
+            isProfile && 'text-2xl tracking-wide',
+          ]}
+        >
+          {site.author.name}
+        </p>
+        <p
+          class:list={[
+            'mt-0.5 text-primary',
+            isProfile ? 'text-sm tracking-[0.12em]' : 'text-xs tracking-wide',
+          ]}
+        >
+          {site.author.role}
+        </p>
+      </div>
+
+      {
+        !isCompact && (
+          <p
+            class:list={[
+              'leading-relaxed text-muted-foreground',
+              isProfile ? 'text-sm' : 'text-sm',
+              isProfile && 'mt-2',
+            ]}
+          >
+            {site.author.bio}
+          </p>
+        )
+      }
+    </div>
+  </div>
+
+  <div
+    class:list={[
+      'flex flex-wrap gap-3 text-muted-foreground',
+      isCompact && 'mt-4 border-t border-border pt-4 text-xs',
+      !isCompact && !isProfile && 'mt-5 justify-center border-t border-border pt-4 text-xs',
+      isProfile && 'mt-8 justify-center gap-6 border-t border-border pt-8 text-sm',
+    ]}
+  >
+    {
+      !isProfile && (
+        <>
+          <a href="/about" class="transition-colors hover:text-primary">关于</a>
+          <span class="text-border">·</span>
+        </>
+      )
+    }
+    <a href={site.links.github} class="transition-colors hover:text-primary" target="_blank" rel="noreferrer">
+      GitHub
+    </a>
+    <span class="text-border">·</span>
+    <a href={site.links.email} class="transition-colors hover:text-primary">来信</a>
+  </div>
+</div>
