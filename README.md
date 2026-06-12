@@ -26,14 +26,14 @@ npm run dev
 
 ```bash
 npm run build
-npm run preview   # 使用 wrangler 预览 dist/
+npm run preview   # 构建后预览 dist/（先 npm run build）
 ```
 
 ## 文章分类
 
 | 分类 | 说明 | 路径 |
 |------|------|------|
-| 随笔 | 日常写作、念头杂记 | `/blog` |
+| 随笔 | 日常写作、念头杂记 | `/essay` |
 | 造物 | 站点与工具介绍 | `/works` |
 
 新建文章时在 frontmatter 中设置：
@@ -44,7 +44,6 @@ title: "标题"
 description: "摘要"
 pubDate: 2026-06-12
 tags: ["标签"]
-category: essay   # essay | work
 cover: "/images/cover.png"  # 可选，列表封面
 featured: false   # 可选，首页造物区优先展示
 ---
@@ -68,7 +67,8 @@ featured: false   # 可选，首页造物区优先展示
 src/
 ├── assets/          # 图片资源（logo、头像）
 ├── components/      # Astro / React 组件
-├── content/blog/    # Markdown 文章
+├── content/essay/   # 随笔
+├── content/work/    # 造物
 ├── layouts/         # 页面布局
 ├── pages/           # 路由
 ├── config/site.ts   # 站点与作者信息

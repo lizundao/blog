@@ -3,7 +3,6 @@ title: "亲戚百科：称呼不求人，读懂亲缘"
 description: "介绍我做的亲戚关系站亲戚百科 qinqi.wiki，以及「搞清称呼、读懂亲疏」这件事为何值得做。"
 pubDate: 2026-06-11
 tags: ["亲戚百科", "产品", "Web"]
-category: work
 cover: "/images/sites/qinqi.png"
 featured: true
 ---

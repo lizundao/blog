@@ -3,7 +3,6 @@ title: "墨点：做小工具，一点就够用"
 description: "介绍我做的桌面效率工具站墨点 inkdot.cn，以及「放心用，不折腾」这件事背后的想法。"
 pubDate: 2026-06-11
 tags: ["墨点", "产品", "桌面工具"]
-category: work
 cover: "/images/sites/inkdot.png"
 featured: true
 ---

@@ -3,7 +3,6 @@ title: "千年医道，自有根基"
 description: "读一则关于港澳中医的报道，谈传承、信心，以及我们为何不必在疑与信之间摇摆。"
 pubDate: 2026-06-12
 tags: ["随笔", "中医", "观察"]
-category: essay
 cover: "/images/essays/tcm-herbs.jpg"
 featured: false
 ---

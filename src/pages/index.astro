@@ -7,7 +7,7 @@ import { site } from '@/config/site';
 
 const essays = await getPostsByCategory('essay');
 const works = await getPostsByCategory('work');
-const latestEssays = essays.slice(0, 3);
+const latestEssays = essays.slice(0, 4);
 const latestWorks = works.slice(0, 4);
 ---
 
@@ -41,7 +41,7 @@ const latestWorks = works.slice(0, 4);
         <h2 class="text-xl font-semibold tracking-tight">随笔</h2>
         <p class="mt-1 font-mono text-xs text-muted-foreground">念头与杂记</p>
       </div>
-      <a href="/blog" class="font-mono text-xs text-primary transition-opacity hover:opacity-80">
+      <a href="/essay" class="font-mono text-xs text-primary transition-opacity hover:opacity-80">
         全部随笔 →
       </a>
     </div>

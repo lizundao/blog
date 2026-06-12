@@ -1,0 +1,6 @@
+/blog/inkdot /works/inkdot 301
+/blog/qinqi /works/qinqi 301
+/blog/towalles /works/towalles 301
+/blog/world-clock /works/world-clock 301
+/blog/* /essay/:splat 301
+/blog /essay 301

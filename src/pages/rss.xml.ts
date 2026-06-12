@@ -1,5 +1,5 @@
 import rss from '@astrojs/rss';
-import { getPostSlug, getPublishedPosts } from '@/lib/posts';
+import { getPostUrl, getPublishedPosts } from '@/lib/posts';
 import type { APIContext } from 'astro';
 
 export async function GET(context: APIContext) {
@@ -13,7 +13,7 @@ export async function GET(context: APIContext) {
       title: post.data.title,
       pubDate: post.data.pubDate,
       description: post.data.description,
-      link: `/blog/${getPostSlug(post)}/`,
+      link: getPostUrl(post),
     })),
   });
 }

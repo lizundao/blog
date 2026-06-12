@@ -3,7 +3,6 @@ title: "开篇词"
 description: "守遵寻道，开卷第一句。说说这间小书房为何开门，又打算写些什么。"
 pubDate: 2026-06-12
 tags: ["随笔"]
-category: essay
 cover: "/images/logo.jpg"
 featured: true
 ---

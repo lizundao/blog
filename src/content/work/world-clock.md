@@ -3,7 +3,6 @@ title: "全球时钟：一眼看清世界时间"
 description: "介绍我做的世界时钟站 world-clock.app，实时查看 193 国时间与 3D 地球。"
 pubDate: 2026-06-11
 tags: ["全球时钟", "产品", "Web"]
-category: work
 cover: "/images/sites/world-clock.png"
 featured: false
 ---

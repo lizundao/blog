@@ -5,13 +5,11 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "npm run build && wrangler dev",
+    "preview": "astro preview",
     "astro": "astro",
-    "deploy": "npm run build && wrangler deploy",
-    "cf-typegen": "wrangler types"
+    "deploy": "npm run build && wrangler pages deploy dist"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "12",
     "@astrojs/mdx": "^4.3.0",
     "@astrojs/react": "^4.3.0",
     "@astrojs/rss": "^4.0.11",

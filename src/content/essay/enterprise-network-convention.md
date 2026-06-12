@@ -3,7 +3,6 @@ title: "营商网络，何以安宁"
 description: "平台自律公约出台，谈涉企侵权信息与网络营商环境的治理之思。"
 pubDate: 2026-06-12
 tags: ["随笔", "社会", "观察"]
-category: essay
 cover: "/images/essays/enterprise-network.jpg"
 featured: false
 ---

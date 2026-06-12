@@ -3,7 +3,6 @@ title: "先有底子，再借春风"
 description: "这一年见过一些新人，把 AI 当作捷径，却越走越迷。聊聊人为何不能没有框架就上路。"
 pubDate: 2026-06-12
 tags: ["随笔", "AI", "工作"]
-category: essay
 cover: "/images/essays/ai-and-self.jpg"
 featured: true
 ---
