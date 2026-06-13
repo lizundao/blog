@@ -4,6 +4,8 @@ import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://lizundao.com',
@@ -19,4 +21,6 @@ export default defineConfig({
   markdown: {
     shikiConfig: { theme: 'github-dark' },
   },
+
+  adapter: cloudflare()
 });
