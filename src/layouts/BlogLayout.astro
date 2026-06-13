@@ -3,23 +3,44 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import Prose from '@/components/shared/Prose.astro';
 import AuthorCard from '@/components/blog/AuthorCard.astro';
 import { formatDate } from '@/lib/posts';
+import { resolveOgImage } from '@/lib/seo';
+import { site } from '@/config/site';
 
 interface Props {
   title: string;
   description: string;
   pubDate: Date;
   tags: string[];
+  cover?: string;
 }
 
-const { title, description, pubDate, tags } = Astro.props;
+const { title, description, pubDate, tags, cover } = Astro.props;
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  datePublished: pubDate.toISOString(),
+  author: {
+    '@type': 'Person',
+    name: site.author.name,
+  },
+  image: resolveOgImage(cover, Astro.site!),
+  url: Astro.url.href,
+};
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout
+  title={title}
+  description={description}
+  ogImage={cover}
+  ogType="article"
+  publishedTime={pubDate}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
   <article class="section-shell py-10 sm:py-14">
     <header class="mb-8 max-w-3xl border-b border-border pb-8 lg:mb-10">
-      <p class="mb-4 font-mono text-xs text-muted-foreground">
-        <span class="text-primary">cat</span> ./posts/{title.toLowerCase().replace(/\s+/g, '-')}.md
-      </p>
       <h1 class="text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl">{title}</h1>
       <p class="mt-4 text-base leading-relaxed text-muted-foreground">{description}</p>
       <div class="mt-6 flex flex-wrap items-center gap-3 font-mono text-xs text-muted-foreground">

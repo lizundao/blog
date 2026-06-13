@@ -48,6 +48,7 @@ export function getPostUrl(post: Post): string {
   return post.collection === 'essay' ? `/essay/${slug}/` : `/works/${slug}/`;
 }
 
+
 export function formatDate(date: Date): string {
   return date.toLocaleDateString('zh-CN', {
     year: 'numeric',

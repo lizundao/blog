@@ -7,23 +7,23 @@ import { site } from '@/config/site';
 const [sloganA, sloganB] = site.slogan.split('，');
 ---
 
-<section class="section-shell pt-6 pb-10 sm:pt-8 sm:pb-14">
+<section class="section-shell pt-4 pb-8 sm:pt-6 sm:pb-12">
   <div class="relative overflow-hidden rounded-2xl border border-border bg-card shadow-ink">
     <div
       class="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/5 blur-3xl"
       aria-hidden="true"
     ></div>
 
-    <div class="grid lg:grid-cols-[minmax(200px,280px)_1fr]">
-      <div class="relative border-b border-border lg:border-b-0 lg:border-r">
+    <div class="grid lg:grid-cols-[minmax(180px,260px)_1fr]">
+      <div class="relative hidden border-r border-border sm:block">
         <div class="absolute inset-0 bg-gradient-to-br from-background via-transparent to-primary/5"></div>
-        <div class="relative flex aspect-[4/3] items-center justify-center p-6 sm:aspect-auto sm:min-h-[280px] lg:min-h-full">
-          <div class="relative w-full max-w-[220px] overflow-hidden rounded-xl border border-border/80 bg-background shadow-ink">
+        <div class="relative flex min-h-[220px] items-center justify-center p-6 lg:min-h-full">
+          <div class="relative w-full max-w-[200px] overflow-hidden rounded-xl border border-border/80 bg-background shadow-ink">
             <Image
               src={logo}
               alt={site.name}
-              width={440}
-              height={330}
+              width={400}
+              height={300}
               class="h-auto w-full object-cover"
               loading="eager"
             />
@@ -31,40 +31,36 @@ const [sloganA, sloganB] = site.slogan.split('，');
         </div>
       </div>
 
-      <div class="flex flex-col justify-between gap-8 p-6 sm:p-8 lg:p-10">
-        <div class="space-y-5">
-          <p class="font-mono text-[11px] text-muted-foreground">
-            <span class="text-primary">~/</span>{site.name.toLowerCase()}
-            <span class="text-border"> · </span>
-            <span>static</span>
-          </p>
+      <div class="flex flex-col justify-between gap-6 p-5 sm:gap-7 sm:p-7 lg:p-9">
+        <div class="space-y-4 sm:space-y-5">
+          <p class="font-poem text-sm text-primary/90 sm:text-base">随笔 · 造物 · 关于</p>
 
-          <div class="space-y-5">
-            <h1 class="font-brush text-[2.75rem] leading-[1.05] text-ink sm:text-6xl lg:text-[4.5rem]">
+          <div class="space-y-4">
+            <h1 class="font-brush text-[2rem] leading-[1.05] text-ink sm:text-5xl lg:text-[3.5rem]">
               {site.name}
             </h1>
 
-            <div class="flex gap-4">
-              <div class="mt-2 w-0.5 shrink-0 rounded-full bg-primary/70" aria-hidden="true"></div>
-              <p class="space-y-2 text-lg leading-relaxed sm:text-xl">
-                <span class="font-script block text-[1.35rem] text-foreground/90 sm:text-2xl">{sloganA}，</span>
-                <span class="font-poem block text-[1.2rem] text-primary sm:text-[1.65rem]">{sloganB}</span>
+            <div class="flex gap-3 sm:gap-4">
+              <div class="mt-1.5 w-0.5 shrink-0 rounded-full bg-primary/70 sm:mt-2" aria-hidden="true"></div>
+              <p class="space-y-1.5 text-base leading-relaxed sm:space-y-2 sm:text-xl">
+                <span class="font-script block text-[1.15rem] text-foreground/90 sm:text-2xl">{sloganA}，</span>
+                <span class="font-poem block text-[1.05rem] text-primary sm:text-[1.5rem]">{sloganB}</span>
               </p>
             </div>
           </div>
         </div>
 
-        <div class="flex flex-col gap-5 border-t border-border pt-5 sm:flex-row sm:items-center sm:justify-between">
-          <div class="flex flex-wrap items-center gap-3">
+        <div class="flex flex-col gap-4 border-t border-border pt-4 sm:flex-row sm:items-center sm:justify-between sm:pt-5">
+          <div class="flex flex-wrap items-center gap-2.5 sm:gap-3">
             <a
               href="/essay"
-              class="inline-flex h-10 items-center rounded-md bg-primary px-5 font-mono text-xs font-medium text-primary-foreground transition-transform active:scale-[0.98]"
+              class="inline-flex h-9 items-center rounded-md bg-primary px-4 font-mono text-xs font-medium text-primary-foreground transition-transform active:scale-[0.98] motion-reduce:active:scale-100 sm:h-10 sm:px-5"
             >
               读随笔
             </a>
             <a
               href="/works"
-              class="inline-flex h-10 items-center rounded-md border border-border bg-background px-5 font-mono text-xs text-foreground transition-colors hover:border-primary/40 hover:bg-accent"
+              class="inline-flex h-9 items-center rounded-md border border-border bg-background px-4 font-mono text-xs text-foreground transition-colors hover:border-primary/40 hover:bg-accent sm:h-10 sm:px-5"
             >
               看造物
             </a>
@@ -72,7 +68,7 @@ const [sloganA, sloganB] = site.slogan.split('，');
 
           <a
             href="/about"
-            class="group flex items-center gap-3 rounded-lg border border-transparent px-1 py-1 transition-colors hover:border-border hover:bg-background/60"
+            class="group hidden items-center gap-3 rounded-lg border border-transparent px-1 py-1 transition-colors hover:border-border hover:bg-background/60 sm:flex"
           >
             <Image
               src={avatar}
@@ -83,7 +79,7 @@ const [sloganA, sloganB] = site.slogan.split('，');
             />
             <div class="min-w-0">
               <p class="truncate text-sm font-medium leading-none">{site.author.name}</p>
-              <p class="mt-1 truncate font-mono text-[10px] text-muted-foreground group-hover:text-primary">
+              <p class="mt-1 truncate text-xs text-muted-foreground group-hover:text-primary">
                 {site.author.role}
               </p>
             </div>

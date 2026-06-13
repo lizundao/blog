@@ -2,13 +2,14 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Hero from '@/components/home/Hero.astro';
 import PostCard from '@/components/blog/PostCard.astro';
+import EssayList from '@/components/blog/EssayList.astro';
 import { getPostsByCategory } from '@/lib/posts';
 import { site } from '@/config/site';
 
 const essays = await getPostsByCategory('essay');
 const works = await getPostsByCategory('work');
 const latestEssays = essays.slice(0, 4);
-const latestWorks = works.slice(0, 4);
+const latestWorks = works.slice(0, 3);
 ---
 
 <BaseLayout title={site.name} description={site.description}>
@@ -26,9 +27,9 @@ const latestWorks = works.slice(0, 4);
             全部造物 →
           </a>
         </div>
-        <div class="post-grid">
+        <div class="works-grid">
           {latestWorks.map((post) => (
-            <PostCard post={post} />
+            <PostCard post={post} variant="compact" />
           ))}
         </div>
       </section>
@@ -47,11 +48,7 @@ const latestWorks = works.slice(0, 4);
     </div>
     {
       latestEssays.length > 0 ? (
-        <div class="post-grid">
-          {latestEssays.map((post) => (
-            <PostCard post={post} />
-          ))}
-        </div>
+        <EssayList posts={latestEssays} />
       ) : (
         <div class="rounded-xl border border-dashed border-border bg-card/40 px-6 py-10 text-center">
           <p class="text-sm text-muted-foreground">随笔尚在酝酿，敬请期待。</p>

@@ -7,18 +7,15 @@ const year = new Date().getFullYear();
 <footer class="mt-auto border-t border-border/80 bg-card/50">
   <div class="section-shell flex flex-col gap-4 py-8 sm:flex-row sm:items-center sm:justify-between">
     <div class="space-y-1">
-      <p class="font-mono text-xs text-muted-foreground">
-        <span class="text-primary">$</span> echo &quot;{site.name}&quot; &gt; ~/blog
-      </p>
+      <p class="font-brush text-xl text-ink">{site.name}</p>
       <p class="text-sm text-muted-foreground">© {year} {site.author.name}</p>
     </div>
     <div class="flex flex-wrap items-center gap-4 font-mono text-xs text-muted-foreground">
-      <a href="/rss.xml" class="transition-colors hover:text-primary">rss.xml</a>
+      <a href="/rss.xml" class="transition-colors hover:text-primary">rss</a>
       <a href={site.links.github} class="transition-colors hover:text-primary" target="_blank" rel="noreferrer">
         github
       </a>
-      <span class="hidden text-border sm:inline">|</span>
-      <span class="hidden sm:inline">Astro · CF Pages</span>
+      <a href={site.links.email} class="transition-colors hover:text-primary">来信</a>
     </div>
   </div>
 </footer>

@@ -1,0 +1,66 @@
+---
+import { formatShortDate, getPostUrl, type Post } from '@/lib/posts';
+
+interface Props {
+  posts: Post[];
+}
+
+const { posts } = Astro.props;
+---
+
+<ul class="divide-y divide-border/80">
+  {
+    posts.map((post) => (
+      <li>
+        <a
+          href={getPostUrl(post)}
+          class="group flex flex-col gap-3 py-6 transition-colors sm:flex-row sm:items-start sm:gap-8 sm:py-7"
+        >
+          <time
+            datetime={post.data.pubDate.toISOString()}
+            class="shrink-0 font-mono text-xs tabular-nums text-muted-foreground sm:w-28 sm:pt-1"
+          >
+            {formatShortDate(post.data.pubDate)}
+          </time>
+
+          <div class="min-w-0 flex-1 space-y-2">
+            <h2 class="text-base font-semibold leading-snug tracking-tight text-ink transition-colors group-hover:text-primary sm:text-lg">
+              {post.data.title}
+            </h2>
+            <p class="line-clamp-2 text-sm leading-relaxed text-muted-foreground">
+              {post.data.description}
+            </p>
+            {
+              post.data.tags.filter((tag) => tag !== '随笔').length > 0 && (
+                <div class="flex flex-wrap gap-2 pt-1">
+                  {post.data.tags
+                    .filter((tag) => tag !== '随笔')
+                    .slice(0, 3)
+                    .map((tag) => (
+                      <span class="tag-pill">{tag}</span>
+                    ))}
+                </div>
+              )
+            }
+          </div>
+
+          {
+            post.data.cover && (
+              <div class="hidden shrink-0 overflow-hidden rounded-md border border-border/60 bg-muted sm:block sm:w-32">
+                <img
+                  src={post.data.cover}
+                  alt={post.data.title}
+                  width={128}
+                  height={80}
+                  loading="lazy"
+                  decoding="async"
+                  class="aspect-[8/5] h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                />
+              </div>
+            )
+          }
+        </a>
+      </li>
+    ))
+  }
+</ul>

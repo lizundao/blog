@@ -3,41 +3,72 @@ import { formatShortDate, getCategoryLabel, getPostCategory, getPostUrl, type Po
 
 interface Props {
   post: Post;
+  variant?: 'default' | 'compact';
 }
 
-const { post } = Astro.props;
+const { post, variant = 'default' } = Astro.props;
 const category = getPostCategory(post);
 const cover = post.data.cover;
+const isCompact = variant === 'compact';
+const displayTags = post.data.tags
+  .filter((tag) => tag !== getCategoryLabel(category))
+  .slice(0, isCompact ? 2 : 3);
 ---
 
 <article class="group h-full">
   <a
     href={getPostUrl(post)}
-    class="flex h-full flex-col overflow-hidden rounded-lg border border-border/80 bg-card/70 shadow-ink transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/30 hover:bg-card hover:shadow-[0_4px_20px_-8px_hsl(var(--ink)/0.15)]"
+    class:list={[
+      'flex h-full flex-col overflow-hidden border border-border/80 bg-card/70 shadow-ink transition-all duration-200 hover:border-primary/30 hover:bg-card motion-reduce:transition-none',
+      isCompact
+        ? 'rounded-md hover:shadow-[0_2px_12px_-6px_hsl(var(--ink)/0.12)] motion-reduce:hover:translate-y-0'
+        : 'rounded-lg hover:-translate-y-0.5 hover:shadow-[0_4px_20px_-8px_hsl(var(--ink)/0.15)] motion-reduce:hover:translate-y-0',
+    ]}
   >
     {
       cover ? (
-        <div class="relative aspect-[5/3] overflow-hidden border-b border-border/60 bg-muted">
+        <div
+          class:list={[
+            'relative overflow-hidden border-b border-border/60 bg-muted',
+            isCompact ? 'aspect-[16/10]' : 'aspect-[5/3]',
+          ]}
+        >
           <img
             src={cover}
-            alt=""
-            width={400}
-            height={240}
+            alt={post.data.title}
+            width={isCompact ? 280 : 400}
+            height={isCompact ? 175 : 240}
             loading="lazy"
             decoding="async"
-            class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+            class="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
           />
-          <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+          {
+            !isCompact && (
+              <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/10 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+            )
+          }
         </div>
       ) : (
-        <div class="flex aspect-[5/3] items-center justify-center border-b border-border/60 bg-secondary/40">
-          <span class="font-brush text-2xl text-primary/40">{getCategoryLabel(category)}</span>
+        <div
+          class:list={[
+            'flex items-center justify-center border-b border-border/60 bg-secondary/40',
+            isCompact ? 'aspect-[16/10]' : 'aspect-[5/3]',
+          ]}
+        >
+          <span class:list={['font-brush text-primary/40', isCompact ? 'text-lg' : 'text-2xl']}>
+            {getCategoryLabel(category)}
+          </span>
         </div>
       )
     }
 
-    <div class="flex flex-1 flex-col p-3.5">
-      <div class="flex items-center justify-between gap-2 font-mono text-[10px] text-muted-foreground">
+    <div class:list={['flex flex-1 flex-col', isCompact ? 'p-3' : 'p-3.5']}>
+      <div
+        class:list={[
+          'flex items-center justify-between gap-2 font-mono text-muted-foreground',
+          isCompact ? 'text-[9px]' : 'text-[10px]',
+        ]}
+      >
         <span class="rounded border border-primary/20 bg-accent/50 px-1.5 py-0.5 text-primary">
           {getCategoryLabel(category)}
         </span>
@@ -46,13 +77,42 @@ const cover = post.data.cover;
         </time>
       </div>
 
-      <h2 class="mt-2.5 line-clamp-2 text-[13px] font-semibold leading-snug tracking-tight text-ink transition-colors group-hover:text-primary sm:text-sm">
+      <h2
+        class:list={[
+          'font-semibold leading-snug tracking-tight text-ink transition-colors group-hover:text-primary',
+          isCompact
+            ? 'mt-2 line-clamp-2 text-[11px] sm:text-xs'
+            : 'mt-2.5 line-clamp-2 text-[13px] sm:text-sm',
+        ]}
+      >
         {post.data.title}
       </h2>
 
-      <p class="mt-1.5 line-clamp-2 flex-1 text-xs leading-relaxed text-muted-foreground">
+      <p
+        class:list={[
+          'leading-relaxed text-muted-foreground',
+          isCompact ? 'mt-1.5 line-clamp-2 flex-1 text-[10px]' : 'mt-1.5 line-clamp-2 flex-1 text-xs',
+        ]}
+      >
         {post.data.description}
       </p>
+
+      {
+        displayTags.length > 0 && (
+          <div
+            class:list={[
+              'flex flex-wrap gap-1.5 border-t border-border/60',
+              isCompact ? 'mt-2 pt-2' : 'mt-3 pt-2.5',
+            ]}
+          >
+            {
+              displayTags.map((tag) => (
+                <span class:list={['tag-pill', isCompact && 'text-[10px]']}>{tag}</span>
+              ))
+            }
+          </div>
+        )
+      }
     </div>
   </a>
 </article>
