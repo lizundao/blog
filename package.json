@@ -7,7 +7,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "npm run build && wrangler pages deploy dist"
+    "deploy": "npm run build && wrangler pages deploy dist",
+    "essay:polish": "node scripts/polish-essay.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.0",

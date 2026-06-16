@@ -85,6 +85,7 @@ public/
 - [Towalles](https://towalles.com/cn) — 在线工具集
 - [全球时钟](https://world-clock.app/) — 世界时间
 - [黄历](https://huangli.wiki/) — 农历宜忌查询
+- [ResAPI](https://www.resapi.cn/) — 免费开放 API
 
 ## License
 
