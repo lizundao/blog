@@ -86,6 +86,7 @@ public/
 - [全球时钟](https://world-clock.app/) — 世界时间
 - [黄历](https://huangli.wiki/) — 农历宜忌查询
 - [ResAPI](https://www.resapi.cn/) — 免费开放 API
+- [美术趣](https://msqu.cn/) — 每日精选图片与故事
 
 ## License
 

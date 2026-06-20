@@ -13,6 +13,7 @@ const sites = [
   { name: 'world-clock', url: 'https://world-clock.app/' },
   { name: 'huangli', url: 'https://huangli.wiki/' },
   { name: 'resapi', url: 'https://www.resapi.cn/' },
+  { name: 'msqu', url: 'https://msqu.cn/' },
 ];
 
 await mkdir(outDir, { recursive: true });
