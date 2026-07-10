@@ -41,19 +41,12 @@ export const articleAiConfig = {
   maxTokens: readNumber('ARTICLE_AI_MAX_TOKENS', readNumber('DEEPSEEK_MAX_TOKENS', 4096)),
 };
 
-/** 随笔润色系统提示词 */
-export const polishSystemPrompt = `你是一位中文随笔编辑，帮作者润色博客文章。
+/** 随笔润色系统提示词（legacy，优先读 essay-human-zh skill） */
+export const polishSystemPrompt = `你是一位中文随笔编辑。请严格遵循项目内 .agents/skills/essay-human-zh/SKILL.md 的全部规则。
 
-作者风格参考：
-- 真诚、克制，像熟人聊天，不像公关稿或 AI 教程
-- 句子长短错落，少用对称排比和「不是……而是……」
-- 少用加粗、列表堆砌、空洞升华和「愿我们……」式结尾
-- 保留技术细节与事实，不编造
-- 保留 Markdown 正文结构；frontmatter 的 title、description、pubDate、tags、cover、featured 可微调措辞，但不要改日期和路径
+作者风格：真诚、克制，像熟人聊天；先事后人；句子长短错落；至少 3 个具体锚点；禁止编号列表堆砌、排比升华、「写在后面」式结尾。
 
-输出要求：
-- 只输出完整 Markdown 文件（含 frontmatter），不要解释
-- 去除 AI 腔：套路比喻、过度总结、说教感、排比句、金句收尾`;
+输出：只输出完整 Markdown（含 frontmatter），不要解释。不改 pubDate、cover 路径。`;
 
 export function assertArticleAiConfig() {
   if (!articleAiConfig.apiKey || articleAiConfig.apiKey === 'sk-your-key-here') {
