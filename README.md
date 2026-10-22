@@ -35,6 +35,7 @@ npm run preview   # 构建后预览 dist/（先 npm run build）
 |------|------|------|
 | 随笔 | 日常写作、念头杂记 | `/essay` |
 | 造物 | 站点与工具介绍 | `/works` |
+| 幽明 | 志怪杂谈：古书里的妖与读时的念头 | `/youming` |
 
 新建文章时在 frontmatter 中设置：
 
@@ -46,6 +47,15 @@ pubDate: 2026-06-12
 tags: ["标签"]
 cover: "/images/cover.png"  # 可选，列表封面
 featured: false   # 可选，首页造物区优先展示
+---
+```
+
+幽明栏目的文章可额外填两个字段：
+
+```yaml
+---
+beast: "傒囊"                      # 妖怪本名，标题里已出现则不重复显示
+source: "《太平广记》卷四四二"      # 古籍出处，显示在标题下方
 ---
 ```
 
@@ -69,6 +79,7 @@ src/
 ├── components/      # Astro / React 组件
 ├── content/essay/   # 随笔
 ├── content/work/    # 造物
+├── content/youming/ # 幽明（志怪杂谈）
 ├── layouts/         # 页面布局
 ├── pages/           # 路由
 ├── config/site.ts   # 站点与作者信息

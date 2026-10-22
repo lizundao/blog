@@ -8,8 +8,10 @@ import { site } from '@/config/site';
 
 const essays = await getPostsByCategory('essay');
 const works = await getPostsByCategory('work');
+const youmings = await getPostsByCategory('youming');
 const latestEssays = essays.slice(0, 4);
 const latestWorks = works.slice(0, 3);
+const latestYouming = youmings.slice(0, 3);
 ---
 
 <BaseLayout title={site.name} description={site.description}>
@@ -56,4 +58,25 @@ const latestWorks = works.slice(0, 3);
       )
     }
   </section>
+
+  {
+    latestYouming.length > 0 && (
+      <section class="section-shell border-t border-border/80 py-12">
+        <div class="mb-6 flex items-end justify-between gap-4">
+          <div>
+            <h2 class="text-xl font-semibold tracking-tight">幽明</h2>
+            <p class="mt-1 font-mono text-xs text-muted-foreground">古书里的妖，与读时的念头</p>
+          </div>
+          <a href="/youming" class="font-mono text-xs text-primary transition-opacity hover:opacity-80">
+            全部幽明 →
+          </a>
+        </div>
+        <div class="works-grid">
+          {latestYouming.map((post) => (
+            <PostCard post={post} variant="compact" />
+          ))}
+        </div>
+      </section>
+    )
+  }
 </BaseLayout>

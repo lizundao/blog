@@ -1,6 +1,6 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 
-export type PostCategory = 'essay' | 'work';
+export type PostCategory = 'essay' | 'work' | 'youming';
 export type Post = CollectionEntry<PostCategory>;
 
 export const POST_CATEGORIES = {
@@ -14,6 +14,11 @@ export const POST_CATEGORIES = {
     description: '路上所作，站点与小工具的缘起与介绍。',
     path: '/works',
   },
+  youming: {
+    label: '幽明',
+    description: '古书里记下的妖，与读到它们时起的念头。',
+    path: '/youming',
+  },
 } as const;
 
 export function getPostCategory(post: Post): PostCategory {
@@ -21,11 +26,12 @@ export function getPostCategory(post: Post): PostCategory {
 }
 
 export async function getPublishedPosts(): Promise<Post[]> {
-  const [essays, works] = await Promise.all([
+  const [essays, works, youmings] = await Promise.all([
     getCollection('essay', ({ data }) => !data.draft),
     getCollection('work', ({ data }) => !data.draft),
+    getCollection('youming', ({ data }) => !data.draft),
   ]);
-  return [...essays, ...works].sort(
+  return [...essays, ...works, ...youmings].sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
   );
 }
@@ -44,10 +50,8 @@ export function getPostSlug(post: Post): string {
 }
 
 export function getPostUrl(post: Post): string {
-  const slug = getPostSlug(post);
-  return post.collection === 'essay' ? `/essay/${slug}/` : `/works/${slug}/`;
+  return `${POST_CATEGORIES[post.collection].path}/${getPostSlug(post)}/`;
 }
-
 
 export function formatDate(date: Date): string {
   return date.toLocaleDateString('zh-CN', {

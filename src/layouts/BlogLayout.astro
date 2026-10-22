@@ -12,9 +12,16 @@ interface Props {
   pubDate: Date;
   tags: string[];
   cover?: string;
+  /** 幽明栏目专用：古籍出处，如《太平广记》卷四四二 */
+  source?: string;
+  /** 幽明栏目专用：妖怪本名 */
+  beast?: string;
 }
 
-const { title, description, pubDate, tags, cover } = Astro.props;
+const { title, description, pubDate, tags, cover, source, beast } = Astro.props;
+
+// 标题里已经点了名的，就不再重复标一次
+const showBeast = Boolean(beast && !title.includes(beast));
 
 const articleJsonLd = {
   '@context': 'https://schema.org',
@@ -43,6 +50,15 @@ const articleJsonLd = {
     <header class="mb-8 max-w-3xl border-b border-border pb-8 lg:mb-10">
       <h1 class="text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl">{title}</h1>
       <p class="mt-4 text-base leading-relaxed text-muted-foreground">{description}</p>
+      {
+        (showBeast || source) && (
+          <p class="mt-4 flex flex-wrap items-center gap-2 font-poem text-sm text-primary/85">
+            {showBeast && <span>{beast}</span>}
+            {showBeast && source && <span class="text-border">·</span>}
+            {source && <span>{source}</span>}
+          </p>
+        )
+      }
       <div class="mt-6 flex flex-wrap items-center gap-3 font-mono text-xs text-muted-foreground">
         <time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
         {

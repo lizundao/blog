@@ -3,35 +3,21 @@ import { Image } from 'astro:assets';
 import ThemeToggle from '@/components/shared/ThemeToggle';
 import logo from '@/assets/logo.jpg';
 import { site } from '@/config/site';
-import type { PostCategory } from '@/lib/posts';
 
 const nav = [
   { href: '/', label: '首页' },
   { href: '/essay', label: '随笔' },
   { href: '/works', label: '造物' },
+  { href: '/youming', label: '幽明' },
   { href: '/about', label: '关于' },
 ];
 
 const currentPath = Astro.url.pathname;
 
-let articleCategory: PostCategory | null = null;
-if (/^\/essay\/[^/]+\/?$/.test(currentPath)) {
-  articleCategory = 'essay';
-} else if (/^\/works\/[^/]+\/?$/.test(currentPath)) {
-  articleCategory = 'work';
-}
-
+// 列表页与文章页同属一个栏目：/essay 与 /essay/xxx 都算「随笔」
 function isNavActive(href: string): boolean {
   if (href === '/') return currentPath === '/';
-  if (href === '/essay') {
-    if (articleCategory) return articleCategory === 'essay';
-    return currentPath === '/essay';
-  }
-  if (href === '/works') {
-    if (articleCategory) return articleCategory === 'work';
-    return currentPath === '/works';
-  }
-  return currentPath.startsWith(href);
+  return currentPath === href || currentPath.startsWith(`${href}/`);
 }
 ---
 

@@ -21,4 +21,15 @@ const work = defineCollection({
   schema: postSchema,
 });
 
-export const collections = { essay, work };
+/** 幽明：志怪杂谈，比随笔多两个锚点——妖怪本名与古籍出处 */
+const youmingSchema = postSchema.extend({
+  beast: z.string().optional(),
+  source: z.string().optional(),
+});
+
+const youming = defineCollection({
+  type: 'content',
+  schema: youmingSchema,
+});
+
+export const collections = { essay, work, youming };
