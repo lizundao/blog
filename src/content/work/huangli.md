@@ -13,7 +13,7 @@ featured: false
 
 地址是 [huangli.wiki](https://huangli.wiki/)，打开即可看当日农历、干支、纳音、冲煞、宜忌，以及十二时辰的吉凶与行事宜忌。不必装 App，手机浏览器就能用；也接了微信公众号与微信小程序，扫码即可带走。
 
-![黄历 huangli.wiki 首页截图](/images/sites/huangli.png)
+![黄历 huangli.wiki 首页截图](../../assets/images/sites/huangli.png)
 
 ## 为什么要做黄历
 

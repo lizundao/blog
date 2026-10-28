@@ -4,6 +4,7 @@ import Prose from '@/components/shared/Prose.astro';
 import AuthorCard from '@/components/blog/AuthorCard.astro';
 import { formatDate } from '@/lib/posts';
 import { resolveOgImage } from '@/lib/seo';
+import { resolveImage } from '@/lib/images';
 import { site } from '@/config/site';
 
 interface Props {
@@ -23,6 +24,9 @@ const { title, description, pubDate, tags, cover, source, beast } = Astro.props;
 // 标题里已经点了名的，就不再重复标一次
 const showBeast = Boolean(beast && !title.includes(beast));
 
+const coverMeta = resolveImage(cover);
+const shareImage = await resolveOgImage(coverMeta ?? cover, Astro.site!);
+
 const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -33,7 +37,7 @@ const articleJsonLd = {
     '@type': 'Person',
     name: site.author.name,
   },
-  image: resolveOgImage(cover, Astro.site!),
+  image: shareImage,
   url: Astro.url.href,
 };
 ---
@@ -41,7 +45,7 @@ const articleJsonLd = {
 <BaseLayout
   title={title}
   description={description}
-  ogImage={cover}
+  ogImage={shareImage}
   ogType="article"
   publishedTime={pubDate}
 >

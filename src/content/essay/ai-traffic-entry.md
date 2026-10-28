@@ -7,7 +7,7 @@ cover: "/images/essays/ai-traffic-entry.jpg"
 featured: false
 ---
 
-![未来与路](/images/essays/ai-traffic-entry.jpg)
+![未来与路](../../assets/images/essays/ai-traffic-entry.jpg)
 
 7 月 4 日，豆包和通义千问几乎同时发了通知：智能体功能将在 7 月 15 日下线。豆包里不能再新建、调用自建智能体；千问那边也一样。官方建议有需要的用户，去字节旗下的猫箱 App 继续。
 

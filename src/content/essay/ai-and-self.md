@@ -7,7 +7,7 @@ cover: "/images/essays/ai-and-self.jpg"
 featured: true
 ---
 
-![书桌与笔记](/images/essays/ai-and-self.jpg)
+![书桌与笔记](../../assets/images/essays/ai-and-self.jpg)
 
 这一年，我也见过一些新人。
 

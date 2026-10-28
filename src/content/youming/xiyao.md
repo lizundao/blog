@@ -8,7 +8,7 @@ source: "《搜神记》卷十八"
 cover: "/images/youming/xiyao.jpg"
 ---
 
-![深夜堂屋里三个高冠人影](/images/youming/xiyao.jpg)
+![深夜堂屋里三个高冠人影](../../assets/images/youming/xiyao.jpg)
 
 魏郡有个叫张奋的人，家里本来非常有钱。忽然家道败落，只好把大宅子卖了。
 

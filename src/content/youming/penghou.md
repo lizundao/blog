@@ -8,7 +8,7 @@ source: "《搜神记》卷十八"
 cover: "/images/youming/penghou.jpg"
 ---
 
-![断樟树流血，人面狗身的精怪立在树旁](/images/youming/penghou.jpg)
+![断樟树流血，人面狗身的精怪立在树旁](../../assets/images/youming/penghou.jpg)
 
 从前的人相信，树活得年头久了，里面会住进一个精怪。这种精怪有名字，叫彭侯，样子像一条黑狗，没有尾巴。
 

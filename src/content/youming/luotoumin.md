@@ -8,7 +8,7 @@ source: "《搜神记》卷十二"
 cover: "/images/youming/luotoumin.jpg"
 ---
 
-![夜空里一只人头以耳为翼飞过屋脊](/images/youming/luotoumin.jpg)
+![夜空里一只人头以耳为翼飞过屋脊](../../assets/images/youming/luotoumin.jpg)
 
 三国时候，吴国将军朱桓家里，有一个很特别的婢女。
 

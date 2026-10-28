@@ -32,7 +32,7 @@ const {
 
 const pageTitle = title === site.name ? site.title : `${title} · ${site.name}`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
-const shareImage = resolveOgImage(ogImage, Astro.site!);
+const shareImage = await resolveOgImage(ogImage, Astro.site!);
 ---
 
 <!doctype html>

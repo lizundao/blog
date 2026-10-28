@@ -8,7 +8,7 @@ source: "《搜神记》卷十二"
 cover: "/images/youming/jiaoren.jpg"
 ---
 
-![海面上月光里织布的鲛人](/images/youming/jiaoren.jpg)
+![海面上月光里织布的鲛人](../../assets/images/youming/jiaoren.jpg)
 
 南海之外，住着一种人，叫鲛人。
 

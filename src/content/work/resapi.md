@@ -12,7 +12,7 @@ featured: false
 
 地址是 [resapi.cn](https://www.resapi.cn/)，定位很直接：**免费开放、只读查询、无需注册**。目标不是做大而全的平台，而是把开发里常见的查询能力整理成统一的 REST 接口，文档写清楚，复制示例就能接。
 
-![ResAPI resapi.cn 首页截图](/images/sites/resapi.png)
+![ResAPI resapi.cn 首页截图](../../assets/images/sites/resapi.png)
 
 ## 为什么做 ResAPI
 

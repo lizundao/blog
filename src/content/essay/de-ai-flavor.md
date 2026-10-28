@@ -7,7 +7,7 @@ cover: "/images/essays/de-ai-flavor.jpg"
 featured: false
 ---
 
-![钢笔与笔记本](/images/essays/de-ai-flavor.jpg)
+![钢笔与笔记本](../../assets/images/essays/de-ai-flavor.jpg)
 
 前几天把几篇随笔又读了一遍，越读越别扭。
 

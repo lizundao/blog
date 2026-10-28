@@ -38,27 +38,6 @@ const latestYouming = youmings.slice(0, 3);
     )
   }
 
-  <section class="section-shell border-t border-border/80 py-12">
-    <div class="mb-6 flex items-end justify-between gap-4">
-      <div>
-        <h2 class="text-xl font-semibold tracking-tight">随笔</h2>
-        <p class="mt-1 font-mono text-xs text-muted-foreground">念头与杂记</p>
-      </div>
-      <a href="/essay" class="font-mono text-xs text-primary transition-opacity hover:opacity-80">
-        全部随笔 →
-      </a>
-    </div>
-    {
-      latestEssays.length > 0 ? (
-        <EssayList posts={latestEssays} />
-      ) : (
-        <div class="rounded-xl border border-dashed border-border bg-card/40 px-6 py-10 text-center">
-          <p class="text-sm text-muted-foreground">随笔尚在酝酿，敬请期待。</p>
-        </div>
-      )
-    }
-  </section>
-
   {
     latestYouming.length > 0 && (
       <section class="section-shell border-t border-border/80 py-12">
@@ -79,4 +58,25 @@ const latestYouming = youmings.slice(0, 3);
       </section>
     )
   }
+
+  <section class="section-shell border-t border-border/80 py-12">
+    <div class="mb-6 flex items-end justify-between gap-4">
+      <div>
+        <h2 class="text-xl font-semibold tracking-tight">随笔</h2>
+        <p class="mt-1 font-mono text-xs text-muted-foreground">念头与杂记</p>
+      </div>
+      <a href="/essay" class="font-mono text-xs text-primary transition-opacity hover:opacity-80">
+        全部随笔 →
+      </a>
+    </div>
+    {
+      latestEssays.length > 0 ? (
+        <EssayList posts={latestEssays} />
+      ) : (
+        <div class="rounded-xl border border-dashed border-border bg-card/40 px-6 py-10 text-center">
+          <p class="text-sm text-muted-foreground">随笔尚在酝酿，敬请期待。</p>
+        </div>
+      )
+    }
+  </section>
 </BaseLayout>

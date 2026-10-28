@@ -8,7 +8,7 @@ source: "《山海经·西山经》"
 cover: "/images/youming/bifang.jpg"
 ---
 
-![独脚的毕方鸟立于屋脊，远处火光](/images/youming/bifang.jpg)
+![独脚的毕方鸟立于屋脊，远处火光](../../assets/images/youming/bifang.jpg)
 
 先说这只鸟长什么样：样子像鹤，可它只有一只脚。青色的羽毛，带着红色的斑纹，一张白嘴。
 

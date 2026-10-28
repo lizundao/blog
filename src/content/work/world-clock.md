@@ -13,7 +13,7 @@ featured: false
 
 地址是 [world-clock.app](https://world-clock.app/)，副标题是**实时世界时间与 3D 地球**。打开即可查看各国首都的当前时间、UTC 偏移，以及是否处于夏令时（DST），不必装 App，也不用注册。
 
-![全球时钟 world-clock.app 首页截图](/images/sites/world-clock.png)
+![全球时钟 world-clock.app 首页截图](../../assets/images/sites/world-clock.png)
 
 ## 为什么要做全球时钟
 

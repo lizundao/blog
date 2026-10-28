@@ -7,7 +7,7 @@ cover: "/images/logo.jpg"
 featured: true
 ---
 
-![守遵寻道](/images/logo.jpg)
+![守遵寻道](../../assets/images/logo.jpg)
 
 世上有许多热闹的地方，我偏不爱挤。
 

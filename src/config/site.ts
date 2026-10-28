@@ -14,5 +14,4 @@ export const site = {
     repo: 'https://github.com/lizundao/blog',
   },
   stack: ['TypeScript', 'Astro', 'React', 'Tailwind', 'Cloudflare'],
-  defaultOgImage: '/images/logo.jpg',
 } as const;

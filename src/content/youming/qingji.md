@@ -8,7 +8,7 @@ source: "《管子·水地》"
 cover: "/images/youming/qingji.jpg"
 ---
 
-![干涸的水泽里，黄衣小人骑马奔驰](/images/youming/qingji.jpg)
+![干涸的水泽里，黄衣小人骑马奔驰](../../assets/images/youming/qingji.jpg)
 
 两千多年前的书里记过一种很小的精怪。
 

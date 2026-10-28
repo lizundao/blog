@@ -11,7 +11,7 @@ featured: true
 
 站点地址是 [inkdot.cn](https://inkdot.cn/)，一句话介绍：**小工具，一点就够用**。它不是又一个「全能办公套件」，而是一组按需取用、装完就能用的桌面小工具，面向 macOS 和 Windows。
 
-![墨点 inkdot.cn 首页截图](/images/sites/inkdot.png)
+![墨点 inkdot.cn 首页截图](../../assets/images/sites/inkdot.png)
 
 ## 为什么要做墨点
 

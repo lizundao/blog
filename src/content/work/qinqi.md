@@ -11,7 +11,7 @@ featured: true
 
 地址是 [qinqi.wiki](https://qinqi.wiki/)，一句话概括：**称呼不求人，浏览器本地计算**。它帮你在逢年过节、走亲访友之前，把叫法捋清楚；也提供一些关于亲缘、人情与相处的短文，不只会算称呼，也想让人读懂一点亲疏里的分寸。
 
-![亲戚百科 qinqi.wiki 首页截图](/images/sites/qinqi.png)
+![亲戚百科 qinqi.wiki 首页截图](../../assets/images/sites/qinqi.png)
 
 ## 为什么要做亲戚百科
 

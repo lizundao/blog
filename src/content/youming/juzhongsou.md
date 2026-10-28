@@ -8,7 +8,7 @@ source: "《玄怪录》"
 cover: "/images/youming/juzhongsou.jpg"
 ---
 
-![巨大的橘子剖开，里面两位老者对坐下棋](/images/youming/juzhongsou.jpg)
+![巨大的橘子剖开，里面两位老者对坐下棋](../../assets/images/youming/juzhongsou.jpg)
 
 唐朝有个故事说，巴邛这地方，有个人家有一片橘园。
 

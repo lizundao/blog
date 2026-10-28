@@ -8,7 +8,7 @@ source: "《酉阳杂俎·支诺皋》"
 cover: "/images/youming/yexian.jpg"
 ---
 
-![南方水乡，金目红鳍的大鱼浮出池边](/images/youming/yexian.jpg)
+![南方水乡，金目红鳍的大鱼浮出池边](../../assets/images/youming/yexian.jpg)
 
 你大概听过灰姑娘：后母欺负她，仙女帮忙，舞会上丢了一只水晶鞋，王子拿着鞋找到她。
 

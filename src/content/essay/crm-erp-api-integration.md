@@ -7,7 +7,7 @@ cover: "/images/essays/api-integration.jpg"
 featured: false
 ---
 
-![联调与代码](/images/essays/api-integration.jpg)
+![联调与代码](../../assets/images/essays/api-integration.jpg)
 
 今天公司在做销售易与金蝶的数据互联互通，API 联调。
 

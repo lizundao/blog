@@ -7,7 +7,7 @@ cover: "/images/essays/huangli-rebuild.jpg"
 featured: false
 ---
 
-![桌上的老黄历与日历](/images/essays/huangli-rebuild.jpg)
+![桌上的老黄历与日历](../../assets/images/essays/huangli-rebuild.jpg)
 
 huangli.wiki 是我的黄历站，查农历、宜忌、时辰吉凶。
 

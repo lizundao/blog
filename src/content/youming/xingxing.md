@@ -8,7 +8,7 @@ source: "《山海经·海内南经》"
 cover: "/images/youming/xingxing.jpg"
 ---
 
-![南方山林里人面兽身的狌狌](/images/youming/xingxing.jpg)
+![南方山林里人面兽身的狌狌](../../assets/images/youming/xingxing.jpg)
 
 《山海经》里记过南方的一种野兽，叫狌狌。它长得像猪，脸却是人的脸。
 

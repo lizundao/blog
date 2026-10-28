@@ -8,7 +8,7 @@ source: "《搜神记》卷十二"
 cover: "/images/youming/xinang.jpg"
 ---
 
-![两山之间的山谷，雾中伸手的孩童](/images/youming/xinang.jpg)
+![两山之间的山谷，雾中伸手的孩童](../../assets/images/youming/xinang.jpg)
 
 古书里说，两座大山中间，住着一种东西。
 

@@ -7,7 +7,7 @@ cover: "/images/essays/product-say-no.jpg"
 featured: false
 ---
 
-![路标与选择](/images/essays/product-say-no.jpg)
+![路标与选择](../../assets/images/essays/product-say-no.jpg)
 
 有一个接口，我改了很多轮。
 

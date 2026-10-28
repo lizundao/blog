@@ -7,7 +7,7 @@ cover: "/images/essays/resapi-mcp.jpg"
 featured: false
 ---
 
-![连接与通路](/images/essays/resapi-mcp.jpg)
+![连接与通路](../../assets/images/essays/resapi-mcp.jpg)
 
 早上刚写完一篇随笔，谈豆包下线智能体、腾讯推 WorkBuddy、大厂抢 AI 入口。文末我说，底层开发者也许该从等流量转向接能力——把服务做成 Agent 能调的 MCP，从门面变成厨房。
 

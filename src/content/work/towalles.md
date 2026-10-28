@@ -11,7 +11,7 @@ featured: true
 
 中文入口是 [towalles.com/cn](https://towalles.com/cn)。一句话介绍：**为全球创作者与工程师打造的专业在线工具集，隐私优先，无需注册**。打开网页就能用，不算账、不登录，尽量在浏览器里把事情办完。
 
-![Towalles towalles.com/cn 首页截图](/images/sites/towalles.png)
+![Towalles towalles.com/cn 首页截图](../../assets/images/sites/towalles.png)
 
 ## 为什么要做 Towalles
 

@@ -11,7 +11,7 @@ featured: false
 
 地址是 [msqu.cn](https://msqu.cn/)，一句话介绍：**每日精选精美图片与故事**。每天一张图，一段文字，不追热点，不堆功能，打开就能看。
 
-![美术趣 msqu.cn 首页截图](/images/sites/msqu.png)
+![美术趣 msqu.cn 首页截图](../../assets/images/sites/msqu.png)
 
 ## 为什么要做美术趣
 

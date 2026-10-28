@@ -7,7 +7,7 @@ cover: "/images/essays/laptop-static-discharge.jpg"
 featured: false
 ---
 
-![笔记本电脑与充电器](/images/essays/laptop-static-discharge.jpg)
+![笔记本电脑与充电器](../../assets/images/essays/laptop-static-discharge.jpg)
 
 今天电话帮同事检修了一次电脑。
 

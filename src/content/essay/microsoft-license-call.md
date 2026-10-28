@@ -7,7 +7,7 @@ cover: "/images/essays/microsoft-license-call.jpg"
 featured: false
 ---
 
-![办公室里的电脑](/images/essays/microsoft-license-call.jpg)
+![办公室里的电脑](../../assets/images/essays/microsoft-license-call.jpg)
 
 今天接了一通电话，对方自称是微软中国。
 
