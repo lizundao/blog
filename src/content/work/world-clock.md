@@ -56,8 +56,6 @@ featured: false
 
 **[https://world-clock.app/](https://world-clock.app/)**
 
-有建议或发现错漏，欢迎反馈。
-
 ---
 
-全球时钟会持续维护时区与展示细节，这篇介绍也会随后更新。
+时区数据会跟着维护。发现哪个城市的偏移不对，欢迎指出。

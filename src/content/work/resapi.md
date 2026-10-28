@@ -99,4 +99,4 @@ MCP 文档：**[https://www.resapi.cn/docs/agent/mcp](https://www.resapi.cn/docs
 
 ---
 
-ResAPI 会继续补接口与 Agent 能力，这篇介绍也会随版本更新。
+接口和 Agent 能力会继续补，新进展写在更新日志里。
