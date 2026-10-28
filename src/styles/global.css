@@ -15,7 +15,7 @@
     --secondary: 40 12% 94%;
     --secondary-foreground: 0 0% 12%;
     --muted: 40 10% 94%;
-    --muted-foreground: 0 0% 42%;
+    --muted-foreground: 0 0% 39%;
     --accent: 350 40% 94%;
     --accent-foreground: 350 52% 30%;
     --destructive: 0 72% 50%;
@@ -114,7 +114,7 @@
   }
 
   .section-shell {
-    @apply container mx-auto px-4 sm:px-6;
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6;
   }
 
   .link-underline {
